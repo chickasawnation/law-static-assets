@@ -1,0 +1,37 @@
+// Font Weight Guide
+// -----------------
+// 100 - thin
+// 200 - extralight
+// 300 - light
+// 400 - regular / normal
+// 500 - medium
+// 600 - semi-bold
+// 700 - bold
+// 800 - extrabold
+// 900 - black / heavy
+
+// Font Face Mixin
+@mixin fontFace($fontName, $fileName, $fontWeight, $fontStyle) {
+  @font-face {
+    font-family: "#{$fontName}";
+    src: url("#{$fileName}.woff2") format("woff2"),
+         url("#{$fileName}.woff") format("woff");
+    font-weight: #{$fontWeight};
+    font-style: #{$fontStyle};
+    font-display: swap;
+  }
+}
+
+
+// Normal
+@include fontFace("DM Sans", "dm-sans-regular", 400, "normal");
+// Italic
+@include fontFace("DM Sans", "dm-sans-italic", 400, "italic");
+// Medium
+@include fontFace("DM Sans", "dm-sans-medium", 500, "normal");
+// Medium Italic
+@include fontFace("DM Sans", "dm-sans-medium-italic", 500, "italic");
+// Bold
+@include fontFace("DM Sans", "dm-sans-bold", 700, "normal");
+// Bold Italic
+@include fontFace("DM Sans", "dm-sans-bold-italic", 700, "italic");
